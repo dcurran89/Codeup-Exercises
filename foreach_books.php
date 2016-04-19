@@ -23,8 +23,7 @@ $books = array(
     )
 );
 
-echo $books['The Hobbit']['author']. PHP_EOL;
-
+echo "\n\nOutput of \$books array\n";
 foreach($books as $title => $titleInfo){
     echo "=============================\n";
     echo "{$title}\n";
@@ -33,4 +32,14 @@ foreach($books as $title => $titleInfo){
     }
 }
 
+echo "\n\nBooks published after 1950\n";
+foreach($books as $title => $titleInfo){
+    echo "-----------------------------\n";
+    foreach ($titleInfo as $key => $value) {
+        if($titleInfo['published'] >= 1950){
+            echo "{$title}\n";
+            echo "{$key}: {$value}\n";
+        }
+    }
+}
 ?>
