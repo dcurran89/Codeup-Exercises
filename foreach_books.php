@@ -34,10 +34,10 @@ foreach($books as $title => $titleInfo){
 
 echo "\n\nBooks published after 1950\n";
 foreach($books as $title => $titleInfo){
-    echo "-----------------------------\n";
-    foreach ($titleInfo as $key => $value) {
-        if($titleInfo['published'] >= 1950){
-            echo "{$title}\n";
+    if($titleInfo['published'] >= 1950){
+        echo "-----------------------------\n";
+        echo "{$title}\n";
+        foreach ($titleInfo as $key => $value) {
             echo "{$key}: {$value}\n";
         }
     }
