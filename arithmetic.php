@@ -1,13 +1,29 @@
-<?php 
+<?php
 
-$add = -20 + -22;
-$subtract = 42 - 16;
-$multiply = 6 * 4;
-$modulus = 3 % 2;
+function add($a, $b)
+{
+    return $a + $b;
+}
 
-echo $add . PHP_EOL;
-echo $subtract . PHP_EOL;
-echo $multiply . PHP_EOL;
-echo $modulus . PHP_EOL;
+function subtract($a, $b)
+{
+   return $a - $b;
+}
 
-?>
+function multiply($a, $b)
+{
+    return $a * $b;
+}
+
+function divide($a, $b)
+{
+    return $a / $b;
+}
+
+$aye = 4;
+$bee = 8;
+
+echo add($aye, $bee) . PHP_EOL;
+echo subtract($aye, $bee) . PHP_EOL;
+echo multiply($aye, $bee) . PHP_EOL;
+echo divide($aye, $bee) . PHP_EOL;
