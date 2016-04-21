@@ -16,14 +16,24 @@ function compareArrays($arrayOne, $arrayTwo){
     $count = 0;
     foreach($arrayOne as $name){
         if(search($name, $arrayTwo)){
-            var_dump($name);
             $count++;
         }
     }
     return $count;
 }
+// ------------ MY SECOND ATTEMPT AT COMBINE ---------
+// function combine_arrays($arrayOne, $arrayTwo){
+//     foreach($arrayOne as $index => $name){
+//         $shiftOne = array_shift($arrayOne);
+//         $shiftTwo = array_shift($arrayTwo);
+//         if($arrayOne[$name] == $arrayTwo[$name])
+//     }
+// }
+
+// -------------- MY FIRST ATTEMPT --------------
 function combine_arrays($arrayOne, $arrayTwo){
-    for ($i=0; $i < 5; $i++) {
+    $iterations = count($arrayOne);
+    for ($i=0; $i < $iterations; $i++) {
         $shiftOne = array_shift($arrayOne);
         $shiftTwo = array_shift($arrayTwo);
         if($shiftOne == $shiftTwo){
@@ -37,8 +47,6 @@ function combine_arrays($arrayOne, $arrayTwo){
     print_r($newArray);
 }
 
-echo "There are " . compareArrays($names, $compare) . " items in the array that match." . PHP_EOL;
-var_dump(search('Tina', $names));
 combine_arrays($names, $compare);
 
 ?>
