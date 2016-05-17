@@ -7,21 +7,21 @@ class Square extends Rectangle
     public function __construct($height) 
     {
 
-        $this->height = $height;
+        parent::__construct($height, $height);
 
     }
     //this area overrides the area from Rectangle class
     public function area () 
     {
-
-        return $this->height * $this->height;
+        //need to use getters now for height
+        return $this->getHeight() * $this->getHeight();
         
     }
     //this perimeter overrides the perimeter from Rectangle class
     public function perimeter()
     {
-
-        return (4 * $this->height);
+        //need to use getters now for height
+        return (4 * $this->getHeight());
 
     }
 
