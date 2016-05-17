@@ -4,17 +4,20 @@ require_once 'Rectangle.php';
 require_once 'Square.php';
 
 //instantiation of a new square
-$square = new Square(3,3);
+$square = new Square(3);
 
 echo 'Square Height: ' . $square->height . PHP_EOL;
-echo 'Square Width: ' . $square->width . PHP_EOL;
+echo 'Square Width: ' . $square->height . PHP_EOL;
 //make sure that the square has same width and height
-if($square->height != $square->width){
-            echo 'Square must have same width and height' . PHP_EOL;
-        } else {
-            echo 'Square Area: ' . $square->area() . PHP_EOL;
-            echo 'Square Perimeter: ' . $square->perimeter() . PHP_EOL;
-        }
+// if($square->height != $square->width){
+//             echo 'Square must have same width and height' . PHP_EOL;
+//         } else {
+//             echo 'Square Area: ' . $square->area() . PHP_EOL;
+//             echo 'Square Perimeter: ' . $square->perimeter() . PHP_EOL;
+//         }
+//ABOVE COMMENTED CODE BECOMES UNNECESSARY WITH OVERRIDING METHODS
+echo 'Square Area: ' . $square->area() . PHP_EOL;
+echo 'Square Perimeter: ' . $square->perimeter() . PHP_EOL;
 
 echo '*****************************' . PHP_EOL;
 
