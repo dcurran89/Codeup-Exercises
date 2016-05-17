@@ -8,8 +8,8 @@ class Rectangle
     public function __construct($height, $width) 
     {
 
-        $this->height = $height;
-        $this->width = $width;
+        $this->setHeight($height);
+        $this->setWidth($width);
 
     }
     //set for unaccessible properties 
@@ -17,7 +17,7 @@ class Rectangle
     {
         $this->height = trim($height);
     }
-    
+
     //set for unaccessible properties 
     protected function setWidth($width)
     {
@@ -28,7 +28,7 @@ class Rectangle
     {
         return $this->height;
     }
-    
+
     //get to read data from the unaccessible properties
     public function getWidth()
     {
@@ -37,14 +37,12 @@ class Rectangle
 
     public function area () 
     {
-
-        return $this->height * $this->width;
-
+        return $this->getHeight() * $this->getWidth();
     }
 
     public function perimeter ()
     {
-        return (2 * $this->height) + (2 * $this->width);
+        return (2 * $this->getHeight()) + (2 * $this->getWidth());
     }
 }
 
