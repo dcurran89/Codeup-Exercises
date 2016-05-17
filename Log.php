@@ -14,8 +14,8 @@ class Log
 
         $this->dateTime = date('Y-m-d H:i:s');
         $this->date = date('Y-m-d');
-        $this->setFileName = "$prefix-$this->date.log";
-        $this->setHandle = fopen($this->fileName, 'a');
+        $this->setFileName("$prefix-{$this->date}.log");
+        $this->setHandle(fopen($this->fileName, 'a'));
     
     }
 
@@ -28,7 +28,7 @@ class Log
     //set for unaccessible properties 
     protected function setHandle($handle)
     {
-        $this->handle = trim($handle);
+        $this->handle = $handle;
     }
     //get to read data from the unaccessible properties
     public function getFileName()
@@ -44,30 +44,22 @@ class Log
 
     public function logMessage($logLevel, $message)
     {
-        
         fwrite($this->getHandle(), $this->dateTime . " [" . $logLevel . "] " . $message . PHP_EOL);
-    
     }
 
     public function logInfo($message)
     {
-
         $this->logMessage("INFO", $message);
-    
     }
 
     public function logError($message)
     {
-
-        $this->logMessage("ERROR", $message);
-    
+        $this->logMessage("ERROR", $message);   
     }
 
     public function __destruct()
     {
-
-        fclose($this->getHandle());
-    
+        fclose($this->getHandle());   
     }
 }
 
